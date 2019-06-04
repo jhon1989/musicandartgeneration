@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+</body>
+
+<div class="container-fluid">
+    <h2 class="text-center text-uppercase">
+        musical instruments</h2>
+    <div class="card">
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-md-3" >
+                    <div class="card" style="width:300px">
+                        <a href="index.html">
+                            <img class="card-img-top" src="images/20631-3-piano-keyboard.png" alt="Card image" style="width:100%; height: 80%">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title text-center">PIANO</h4>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="index.html" class="btn btn-primary">TOCAR INSTRUMENTO</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width:300px">
+                        <a href="pianoGenie">
+                            <img class="card-img-top" src="images/de8e1539480be5dc690eb216cb7405da-teclas-de-piano-icono-de-escuela-by-vexels.png" alt="Card image" style="width:100%; height: 80%">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title text-center">PIANO</h4>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="pianoGenie" class="btn btn-primary">TOCAR INSTRUMENTO</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width:300px">
+                        <a href="incredible-spinners">
+                            <img class="card-img-top" src="images/tambores-png-2.png" alt="Card image" style="width:100%; height: 80%">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title text-center">MESCLA INSTRUMENTAL</h4>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="incredible-spinners" class="btn btn-primary">TOCAR INSTRUMENTO</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width:300px">
+                        <a href="deep-drum">
+                            <img class="card-img-top" src="images/Bongo-Fiesta-Burnt-Front.png" alt="Card image" style="width:100%; height: 150%">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title text-center">TAMBORES</h4>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="deep-drum" class="btn btn-primary text-center">TOCAR INSTRUMENTO</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container">
+                <h2 class="text-center">Usuarios y Audios registrados</h2>
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link text-uppercase" data-toggle="collapse" href="#collapseOne">
+                                audios registrados
+                            </a>
+                        </div>
+                        <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                            <div class="card-body" id="audios">
+                                <p>
+                                    <audio controls>
+                                        <source src="audios/a619aa5e-eb8f-4ef9-a828-0352eb62830b" type="audio/ogg">
+                                    </audio>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link  text-uppercase" data-toggle="collapse" href="#collapseTwo">
+                                usuarios registrados
+                            </a>
+                        </div>
+                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function getItem() {
+        return JSON.parse(localStorage.getItem('audio'));
+    }
+
+    function getAudios() {
+        var audios = getItem();
+
+        var elementos = "";
+
+        if(audios != null) {
+
+            for (var i = 0; i < audios.length; i++)
+            {
+                var audio = document.createElement("audio");
+                audio.setAttribute('controls', 'controls');
+                var source = document.createElement("source");
+                source.src = "audios/"+audios[i];
+                audio.appendChild(source);
+
+                var audiosCard = document.getElementById("audios");
+                audiosCard.appendChild(audio);
+            }
+        }
+    }
+
+    (function () {
+        getAudios();
+    })();
+
+</script>
+
+</html>

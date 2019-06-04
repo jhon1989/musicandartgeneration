@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="upload/main.js"></script>
+
+    <style>
+
+
+        #record {
+            background-color: red; /* Green */
+            border-width: medium;
+            border-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            max-width: 50%;
+            max-height: 15%;
+            border-radius: 50%;
+            left: 100px;
+            right: 100px;
+            position: relative;
+        }
+
+        #stopRecord {
+            background-color: green; /* Green */
+            border-width: medium;
+            border-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            max-width: 50%;
+            max-height: 15%;
+            border-radius: 50%;
+            left: 100px;
+            right: 100px;
+            position: relative;
+        }
+
+        h2 {
+            left: 100px;
+            position: relative;
+        }
+
+        #recordedAudio {
+            left: 100px;
+            right: 100px;
+            position: relative;
+        }
+
+        #progress-wrp {
+            border: 1px solid #0099CC;
+            padding: 1px;
+            position: relative;
+            height: 30px;
+            border-radius: 3px;
+            margin: 10px;
+            text-align: left;
+            background: #fff;
+            box-shadow: inset 1px 3px 6px rgba(0, 0, 0, 0.12);
+        }
+
+        #progress-wrp .progress-bar {
+            height: 100%;
+            border-radius: 3px;
+            background-color: #f39ac7;
+            width: 0;
+            box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.11);
+        }
+
+        #progress-wrp .status {
+            top: 3px;
+            left: 50%;
+            position: absolute;
+            display: inline-block;
+            color: #000000;
+        }
+
+    </style>
+
+<script src="recorder.js"></script>
+</head>
+<body>
+
+
+<h2>Record</h2>
+<p>
+    <button id=record onclick="start()"></button>
+    <button id=stopRecord disabled onclick="stop()">Stop</button>
+</p>
+<p>
+    <audio id=recordedAudio>
+        <a href="" download id="video">Download video</a>
+    </audio>
+
+</p>
+
+<audio  width="320" height="240" controls>
+    <source src="audios/6fd7f005-0eb1-474a-88f8-b065c5782976">
+    <a href="" download id="video1">Download video</a>
+</audio>
+
+<a class="twitter-share-button"
+   href="https://twitter.com/intent/tweet?text=Hello%20world"
+   data-size="large">
+    Tweet</a>
+
+
+
+
+</body>
+</html>

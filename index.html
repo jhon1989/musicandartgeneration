@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="mainCss.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-components-web@0.29.0/dist/material-components-web.min.css">
+
+</head>
+<body>
+
+
+
+<div class="container">
+    <div class="machine-bg">
+        <div class="player"></div>
+        <div class="controls">
+            <div>
+                <div id="temperature" class="mdc-slider" tabindex="0" role="slider" aria-valuemin="0.2" aria-valuemax="2" aria-valuenow="1.1"
+                     aria-label="Select temperature">
+                    <div class="mdc-slider__track-container">
+                        <div class="mdc-slider__track"></div>
+                    </div>
+                    <div class="mdc-slider__thumb-container">
+                        <svg class="mdc-slider__thumb" width="21" height="21">
+                            <circle cx="10.5" cy="10.5" r="7.875"></circle>
+                        </svg>
+                        <div class="mdc-slider__focus-ring"></div>
+                    </div>
+                </div>
+                Temperature
+            </div>
+        </div>
+    </div>
+
+    <div class="human-bg" >
+        <div class="player"></div>
+        <div class="controls">
+
+            <div class="footer">
+                <button class="btninicio"><a href="template.html" class="">INICIO</a></button>
+                <button class="btnplay" id="record" onclick="start()"></button>
+                <button class="btnper" id="stopRecord" disabled onclick="stop()">
+
+                </button>
+                <p>
+                    <audio id=recordedAudio></audio>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="keyboard" id="keyboard">
+
+    </div>
+    <div class="loading">
+        Loading...
+    </div>
+
+
+    <div class="circle" style="left: 7.70455%; width: 2.27273%;">
+        <span class="glyphicon glyphicon-music"></span>
+    </div>
+    <div class="circle" style="left: 9.09091%; width: 4.04545%;">
+        <span class="glyphicon glyphicon-music"></span>
+    </div>
+    <div class="circle" style="left: 13.6364%; width: 4.04545%;">
+        <span class="circle glyphicon glyphicon-music"></span>
+    </div>
+    <div class="circle " style="left: 16.7955%; width: 2.27273%;">
+        <span class="glyphicon glyphicon-music"></span>
+    </div>
+    <div class="circle" style="left: 18.1818%; width: 4.04545%;">
+        <span class="glyphicon glyphicon-music"></span>
+    </div>
+    <div class="circle" style="left: 18.1818%; width: 4.04545%;">
+        <span class="glyphicon glyphicon-music"></span>
+    </div>
+    <div class="circle" style="left: 18.1818%; width: 4.04545%;">
+        <span class="glyphicon glyphicon-music"></span>
+    </div>
+    <div class="circle " style="left: 37.3753%; width: 2.27273%;">S</div>
+    <div class="circle " style="left: 39.3773%; width: 2.27273%;">X</div>
+    <div class="circle" style="left: 41.3636%; width: 4.04545%;">D</div>
+    <div class="circle " style="left: 43.5227%; width: 2.27273%;">C</div>
+    <div class="circle" style="left: 47.1091%; width: 4.04545%;">V</div>
+    <div class="circle" style="left: 49.4545%; width: 4.04545%;">G</div>
+    <div class="circle " style="left: 51.6136%; width: 2.27273%;">B</div>
+    <div class="circle" style="left: 53.651%; width: 4.04545%;">H</div>
+    <div class="circle " style="left: 55.6591%; width: 2.27273%;">N</div>
+    <div class="circle" style="left: 57.5455%; width: 4.04545%;">J</div>
+    <div class="circle " style="left: 59.7045%; width: 2.27273%;">M</div>
+    <div class="circle" style="left: 64.0909%; width: 4.04545%;">Q</div>
+    <div class="circle" style="left: 65.6364%; width: 4.04545%;">2</div>
+    <div class="circle " style="left: 67.7955%; width: 2.27273%;">W</div>
+    <div class="circle" style="left: 70.1818%; width: 4.04545%;">3</div>
+    <div class="circle " style="left: 72.3409%; width: 3.27273%;">E</div>
+    <div class="circle" style="left: 75.7273%; width: 4.04545%;">R</div>
+    <div class="circle" style="left: 78.2727%; width: 2.04545%;">5</div>
+    <div class="circle " style="left: 80.4318%; width: 2.27273%;">T</div>
+    <div class="circle" style="left: 81.8182%; width: 3.04545%;">6</div>
+    <div class="circle " style="left: 83.9773%; width: 3.27273%;">Y</div>
+    <div class="circle" style="left: 86.3636%; width: 9.04545%;">7</div>
+    <div class="circle" style="left: 88.4545%; width: 0.04545%;">U</div>
+    <div class="circle" style="left: 92.4545%; width: 7.04545%;">I</div>
+
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tone@0.12.62/build/Tone.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@magenta/music@0.0.8/dist/magentamusic.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.1/web-animations.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/webmidi@2.0.0/webmidi.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/audiokeys@0.1.1/dist/audiokeys.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/startaudiocontext@1.2.1/StartAudioContext.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/material-components-web@0.29.0/dist/material-components-web.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/babel-regenerator-runtime@6.5.0/runtime.min.js"></script>
+<script src="https://cdn.rawgit.com/danigb/tonal/9b6b1663/dist/tonal.min.js"></script>
+
+<script type="text/javascript" src="script.js"></script>
+
+<script type="text/javascript" src="recorder.js"></script>
+
+</body>
+</html>
